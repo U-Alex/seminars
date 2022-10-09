@@ -45,7 +45,7 @@ List<string> selectTime(int[] array) {
         }
         index++;
     }   
-    if (st) {//если max в конце array
+    if (st) {//конец интервала, если max в конце array
         result.Add(time_st.ToString() + "-" + time_end.ToString());
     }
     return result;

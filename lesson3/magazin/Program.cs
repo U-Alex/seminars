@@ -82,8 +82,6 @@ printResult(result);
 
 
 
-
-
 /*
 int max = find_max(array);
 int index = 0;

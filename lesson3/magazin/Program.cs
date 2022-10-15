@@ -56,9 +56,9 @@ for (int ind=0; ind < jrn.Length; ind++) {
     string[] time = jrn[ind].Split('-');
     int t_st = int.Parse(time[0]);
     int t_end = int.Parse(time[1]);
-    int t_len = t_end - t_st + 1;
-    for (int x = 0; x < t_len; x++) {
-        array[t_st+x]++;
+    //int t_len = t_end - t_st + 1;
+    for (int x = t_st; x <= t_end; x++) {
+        array[x]++;
     }
 }
 printArray(array);

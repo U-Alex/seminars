@@ -11,14 +11,25 @@ int inputNum() {
     return num;
 }
 
-string addNum(int num_st, int num_end, string res="") {
+string incNum(int num_st, int num_end, string res="") {
     if (num_st < num_end) {
         res += num_st.ToString() + ",";
-        return addNum(++num_st, num_end, res);
+        return incNum(++num_st, num_end, res);
     }
     return res += num_st.ToString();;
 }
 
+string decNum(int num, string res="") {
+    if (num > 1) {
+        res += num.ToString() + ",";
+        return decNum(--num, res);
+    }
+    return res += num.ToString();;
+}
+
 int num = inputNum();
-string result = addNum(1, num);
+string result = incNum(1, num);
 Console.WriteLine($"натуральные числа от 1 до {num}: {result}");
+
+string result2 = decNum(num);
+Console.WriteLine($"натуральные числа от {num} до 1: {result2}");

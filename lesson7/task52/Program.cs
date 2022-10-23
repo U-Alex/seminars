@@ -1,6 +1,6 @@
 ﻿// Задайте двумерный массив из целых чисел. Найдите среднее арифметическое элементов в каждом столбце.
 
-int[,] CreateArr(int a, int b) {
+int[,] CreateArray(int a, int b) {
     int[,] array = new int[a, b];
     for (int i=0; i < b; i++) {
         for (int j=0; j < a; j++) {
@@ -29,7 +29,7 @@ double[] Average(ref int[,] array, int round) {
         for (int j=0; j < b; j++) {
             sum += array[i, j];
         }
-        array2[i] = (double)Math.Round(sum / array.GetLength(1), round);
+        array2[i] = (double)Math.Round(sum / b, round);
     }
     return array2;
 }
@@ -38,7 +38,7 @@ int rows = 7;
 int columns = 4;
 int round = 1;
 
-int[,] array = CreateArr(rows, columns);
+int[,] array = CreateArray(rows, columns);
 PrintArr(ref array);
 double[] sums = Average(ref array, round);
 
